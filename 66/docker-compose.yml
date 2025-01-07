@@ -1,0 +1,34 @@
+version: '3'
+services:
+
+  jellystat-db:
+    image: postgres:15.2
+    container_name: jellystat-db
+    environment:
+      POSTGRES_DB: 'jfstat'
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "presoak-headstone-tinsel"
+    volumes:
+      - /home/vfedetz/docker/jellystat/postgres-data:/var/lib/postgresql/data # Mounting the volume
+    restart: unless-stopped
+ 
+  jellystat:
+    image: cyfershepard/jellystat:latest
+    container_name: jellystat
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "presoak-headstone-tinsel"
+      POSTGRES_IP: jellystat-db
+      POSTGRES_PORT: 5432
+      JWT_SECRET: 'my-secret-jwt-key'
+      TZ: America/New_York
+    ports:
+      - "3333:3000" #Server Port
+    volumes:
+      - /home/vfedetz/docker/jellystat/backup-data:/app/backend/backup-data # Mounting the volume
+    depends_on:
+      - jellystat-db
+    restart: unless-stopped
+    
+networks:
+  default:

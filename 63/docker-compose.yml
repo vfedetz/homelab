@@ -1,0 +1,17 @@
+version: "3"
+services:
+  dozzle:
+    container_name: dozzle
+    image: amir20/dozzle:latest
+    restart: unless-stopped
+    ports:
+      - 9999:8080
+    environment:
+      - DOZZLE_AUTH_PROVIDER=simple
+      - DOZZLE_HOSTNAME=dockbox
+      - DOZZLE_ENABLE_ACTIONS=true
+      - DOZZLE_NO_ANALYTICS=false
+      - DOZZLE_REMOTE_AGENT=100.83.194.127:7007,192.168.1.189:7007 # ODIN,FRIGATE
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/vfedetz/docker/dozzle:/data

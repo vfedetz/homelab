@@ -1,0 +1,16 @@
+version: '3'
+services:
+  picard:
+    container_name: picard
+    image: mikenye/picard:latest
+    restart: unless-stopped
+    ports:
+      - "5800:5800"
+    environment:
+      - USER_ID=1000
+      - GROUP_ID=1000
+      - TZ=America/New_York  
+    volumes:
+      - "/home/vfedetz/docker/picard:/config:rw"
+      - "/mnt/data/media/music:/storage:rw"
+      - "/mnt/data:/data:rw"

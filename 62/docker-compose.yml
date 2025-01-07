@@ -1,0 +1,35 @@
+version: "3"
+
+# Define services to run
+services:
+  # Service name: glances
+  glances:
+    # Name of the container
+    container_name: glances
+
+    # Docker image to use
+    image: nicolargo/glances:latest
+
+    # Port mapping between host and container
+    ports:
+      - 7300:61208
+
+    # Environment variables
+    environment:
+      - TZ=America/New_York # Timezone
+      - GLANCES_OPT=-w # Glances option to run as a web server
+
+    # Use the host's PID namespace
+    pid: host
+
+    # fixes issue where hostname is not displaying correctly when 'hostname -f' is run within the container
+    hostname: dockbox
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to mount into the container
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket for monitoring
+      - /etc/hostname:/etc/hostname:ro # Override docker hostname with host hostname
+      - /etc/os-release:/etc/os-release:ro # Glances by default uses the container’s OS information in the UI. If you want to display the host’s OS info, you can do that by mounting /etc/os-release into the container.

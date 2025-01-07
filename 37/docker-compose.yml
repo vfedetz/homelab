@@ -1,0 +1,32 @@
+version: "2"
+services:
+    ytdl-material:
+        container_name: ytdl
+        environment: 
+            #UID: 1032
+            #GID: 65537             
+            ytdl_mongodb_connection_string: 'mongodb://ytdl-mongo-db:27017'
+            ytdl_use_local_db: 'false'
+            write_ytdl_config: 'true'
+        restart: unless-stopped
+        depends_on:
+            - ytdl-mongo-db
+        volumes:
+            - /home/vfedetz/docker/youtubedl:/app/appdata
+            - /mnt/data/media/youtube/audio:/app/audio
+            - /mnt/data/media/youtube/video:/app/video
+            - /mnt/data/media/youtube/subscriptions:/app/subscriptions
+            - /mnt/data/media/youtube/users:/app/users
+        ports:
+            - "9998:9998"
+        image: tzahi12345/youtubedl-material:latest
+    
+    ytdl-mongo-db:
+        # If you are using a Raspberry Pi, use mongo:4.4.18
+        image: mongo:4
+        logging:
+            driver: "none"          
+        container_name: ytdl-mongo-db
+        restart: unless-stopped
+        volumes:
+            - /home/vfedetz/docker/youtubedl/db:/data/db

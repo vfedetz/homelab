@@ -1,0 +1,10 @@
+version: '3'
+services:
+  jdownloader-2:
+    container_name: jdownloader
+    image: jlesage/jdownloader-2
+    ports:
+      - "5801:5800"
+    volumes:
+      - "/home/vfedetz/docker/jdownloader-2:/config:rw"
+      - "/mnt/data/downloads/jdownloader-2:/output:rw"
