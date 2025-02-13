@@ -1,0 +1,21 @@
+services:
+
+  archiveteam-warrior:
+    image: atdr.meo.ws/archiveteam/warrior-dockerfile
+    restart: on-failure
+    # The ports are specified this way to avoid collisions. As defined, there are 999 available.
+    ports:
+      - "8001-9000:8001"
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+    environment:
+      DOWNLOADER: kan
+      SELECTED_PROJECT: "usgovernment"
+      CONCURRENT_ITEMS: 6
+    deploy:
+      mode: replicated
+      # This will spin up however many warrior replicas you specify
+      replicas: 6
+      endpoint_mode: vip
