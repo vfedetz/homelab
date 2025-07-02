@@ -20,8 +20,8 @@ services:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
       - /mnt/data/media/photos/misc-photos-vfedetz:/mnt/data/media/photos/misc-photos-vfedetz:ro
-    env_file:
-      - stack.env
+#    env_file:
+#      - stack.env
     ports:
       - '2283:2283'
     depends_on:
@@ -43,8 +43,8 @@ services:
     #   service: cpu # set to one of [armnn, cuda, openvino, openvino-wsl] for accelerated inference - use the `-wsl` version for WSL2 where applicable
     volumes:
       - ${BASE_DIR}/immich/model-cache:/cache
-    env_file:
-      - stack.env
+#    env_file:
+#      - stack.env
     restart: always
     healthcheck:
       disable: false
