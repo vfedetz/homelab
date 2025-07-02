@@ -1,0 +1,65 @@
+services:
+  frigate:
+    container_name: frigate
+    privileged: true # this may not be necessary for all setups
+    restart: unless-stopped
+    stop_grace_period: 30s # allow enough time to shut down the various services
+    image: ghcr.io/blakeblackshear/frigate:stable
+    cap_add:
+      - CAP_PERFMON
+    # mem limits set to try and combat "Unable to keep up with recording segments in cache" errors
+    mem_swappiness: 0
+    memswap_limit: "6g"
+    deploy:
+      resources:
+        limits:
+          memory: "6g"
+    shm_size: "296mb" # update for your cameras based on calculation above
+    devices:
+      #- /dev/bus/usb:/dev/bus/usb # Passes the USB Coral, needs to be modified for other versions
+      #- /dev/apex_0:/dev/apex_0 # Passes a PCIe Coral, follow driver instructions here https://coral.ai/docs/m2/get-started/#2a-on-linux
+      #- /dev/video11:/dev/video11 # For Raspberry Pi 4B
+      - /dev/dri/renderD128:/dev/dri/renderD128 # For intel hwaccel, needs to be updated for your hardware
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${BASE_DIR}/frigate:/config
+      - ${NFS_BASE_DIR}/frigate:/media/frigate
+      - type: tmpfs
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000 # Optional: 1GB of memory, reduces SSD/SD Card wear
+    ports:
+      - "8971:8971"
+      - "5000:5000" # Internal unauthenticated access. Expose carefully.
+      - "8554:8554" # RTSP feeds
+      - "8555:8555/tcp" # WebRTC over tcp
+      - "8555:8555/udp" # WebRTC over udp
+      - "1984:1984" # go2rtc's web interface
+    environment:
+      FRIGATE_RTSP_PASSWORD: ${FRIGATE_RTSP_PASSWORD}
+      PLUS_API_KEY: ${PLUS_API_KEY}
+
+#  mosquitto:
+#    container_name: mosquitto
+#    image: eclipse-mosquitto:latest
+#    depends_on:
+#      - frigate
+#    volumes:
+#      - ${BASE_DIR}/mosquitto/config:/mosquitto/config
+#      - ${BASE_DIR}/mosquitto/data:/mosquitto/data
+#      - ${BASE_DIR}/mosquitto/logs:/mosquitto/logs
+#    restart: unless-stopped
+#    ports:
+#      - 1883:1883
+
+  frigate-notify:
+    container_name: frigate-notify
+    image: ghcr.io/0x2142/frigate-notify:latest
+    depends_on:
+      - frigate
+    environment:
+      FN_CONFIGFILE: /app/config/config.yml
+      TZ: America/New_York
+    volumes:
+      - ${BASE_DIR}/frigate-notify:/app/config
+    restart: unless-stopped
