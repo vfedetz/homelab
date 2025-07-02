@@ -4,7 +4,7 @@ This repository serves as a collection of Docker/container configurations, utili
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Project Struction](#project-structure)
+2. [Project Structure](#project-structure)
 3. [Services](#services)
 4. [Configuration](#configuration)
 5. [License](#license)
