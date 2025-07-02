@@ -1,6 +1,9 @@
-# Homelab
+# 🏠 Homelab
 
 ![Homepage](assets/homepage.png)
+
+
+The purpose of my homelab is to learn and to have fun - where I can try out and experiment with new things.
 
 This repository serves as a collection of Docker/container configurations, utilities, and automation scripts used to manage and orchestrate various services within my homelab environment. Each service has its own directory containing a docker-compose.yml file and any necessary supporting files (e.g., environment variables).
 
@@ -32,10 +35,10 @@ homelab/
 └─ ...
 ```
 ## Hardware Stack
-* **Byakko**: Proxmox (Primary Hypervisor)
-* **Tiamat**: Proxmox (Secondary Hypervisor)
-* **Shiva**: NAS (49.1TB Raw / 38.5TB Usable)
-* **Odin**: Remote Backup Target
+* **Byakko**: Minisforum MS-01 running Proxmox (Primary Hypervisor)
+* **Tiamat**: Beelink S12 Pro running Proxmox (Secondary Hypervisor)
+* **Shiva**: Synology DS1019+ (NAS)
+* **Odin**: Raspberry Pi 4B (Offsite Backup Target)
   
 ## Services
 
