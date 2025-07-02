@@ -47,10 +47,11 @@ homelab/
 * [ArchiveTeam-Warrior](https://github.com/vfedetz/homelab/blob/main/docker-compose/archiveteam-warrior/docker-compose.yml): Virtual appliance to help with the ArchiveTeam archiving efforts.
 * [Frigate](https://github.com/vfedetz/homelab/blob/main/docker-compose/frigate/docker-compose.yml): Local NVR with AI object detection + Notifications
 * [Homepage](https://github.com/vfedetz/homelab/blob/main/docker-compose/homepage/docker-compose.yml): Custom homepage for homelab services
-* [Immich](https://github.com/vfedetz/homelab/blob/main/docker-compose/immich/docker-compose.yml): Photo/Video Manager
-* [Joplin](https://github.com/vfedetz/homelab/blob/main/docker-compose/joplin/docker-compose.yml): Open source note-taking app
+* [Immich](https://github.com/vfedetz/homelab/blob/main/docker-compose/immich/docker-compose.yml): Photo backup and management
+* [Joplin](https://github.com/vfedetz/homelab/blob/main/docker-compose/joplin/docker-compose.yml): Syncronized note-taking app
 * [Ollama](https://github.com/vfedetz/homelab/blob/main/docker-compose/ollama/docker-compose.yml): Local AI LLM + Web UI
 * [SearXNG](https://github.com/vfedetz/homelab/blob/main/docker-compose/searxng/docker-compose.yml): Metasearch engine + VPN proxy
+* [Vaultwarden](https://github.com/vfedetz/homelab/blob/main/docker-compose/vaultwarden/docker-compose.yml): Syncronized password vault compatible with Bitwarden
   
 ## Configuration
 Each service directory contains a docker-compose.yml file and (if required) a .env.example file which can be customized to fit your needs. Common env configurations include:
