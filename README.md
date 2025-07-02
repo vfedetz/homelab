@@ -41,6 +41,7 @@ homelab/
 
 * [ArchiveTeam-Warrior](https://github.com/vfedetz/homelab/blob/main/docker-compose/archiveteam-warrior/docker-compose.yml): Virtual appliance to help with the ArchiveTeam archiving efforts.
 * [Homepage](https://github.com/vfedetz/homelab/blob/main/docker-compose/homepage/docker-compose.yml): Custom homepage for homelab services
+* [Joplin](https://github.com/vfedetz/homelab/blob/main/docker-compose/joplin/docker-compose.yml): Open source note-taking app
 * [Ollama](https://github.com/vfedetz/homelab/blob/main/docker-compose/ollama/docker-compose.yml): Local AI LLM + Web UI
 * [SearXNG](https://github.com/vfedetz/homelab/blob/main/docker-compose/searxng/docker-compose.yml): Metasearch engine + VPN proxy
   
