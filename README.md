@@ -32,10 +32,10 @@ homelab/
 └─ ...
 ```
 ## Hardware Stack
-* Byakko: Proxmox (Primary Hypervisor)
-* Tiamat: Proxmox (Secondary Hypervisor)
-* Shiva: NAS (49.1TB Raw / 38.5TB Usable)
-* Odin: Remote Backup Target
+* **Byakko**: Proxmox (Primary Hypervisor)
+* **Tiamat**: Proxmox (Secondary Hypervisor)
+* **Shiva**: NAS (49.1TB Raw / 38.5TB Usable)
+* **Odin**: Remote Backup Target
   
 ## Services
 
