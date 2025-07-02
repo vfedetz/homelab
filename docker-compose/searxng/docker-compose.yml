@@ -32,7 +32,7 @@ services:
       - UPDATER_PERIOD=24h #update the servers information for the currently in-use VPN service provider.
     restart: unless-stopped
     env_file:
-      - /home/vfedetz/docker/portainer/env/searxng/.env
+      - /data/env/searxng/.env
 
   searxng:
     container_name: searxng
@@ -61,7 +61,7 @@ services:
         max-size: "1m"
         max-file: "1"
     env_file:
-      - /home/vfedetz/docker/portainer/env/searxng/.env
+      - /data/env/searxng/.env
 
   redis:
     container_name: searxng-redis
