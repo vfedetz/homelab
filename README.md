@@ -11,7 +11,7 @@ This repository serves as a collection of Docker/container configurations, utili
 3. [Utilities & Scripts](#utilities--scripts)
 4. [License](#license)
 
-## 📁 Project Structure
+## 📁 Project Structure <project-structure>
 ```
 homelab/
 │
