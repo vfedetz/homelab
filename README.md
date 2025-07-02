@@ -3,7 +3,7 @@
 ![Homepage](assets/homepage.png)
 
 
-The purpose of my homelab is to learn and to have fun - where I can try out and experiment with new things.
+The purpose of my homelab is to learn and to have fun - where I can try out and experiment with technology.
 
 This repository serves as a collection of Docker/container configurations, utilities, and automation scripts used to manage and orchestrate various services within my homelab environment. Each service has its own directory containing a docker-compose.yml file and any necessary supporting files (e.g., environment variables).
 
