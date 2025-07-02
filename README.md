@@ -43,6 +43,7 @@ homelab/
 ## Services
 
 * [ArchiveTeam-Warrior](https://github.com/vfedetz/homelab/blob/main/docker-compose/archiveteam-warrior/docker-compose.yml): Virtual appliance to help with the ArchiveTeam archiving efforts.
+* [Frigate](https://github.com/vfedetz/homelab/blob/main/docker-compose/frigate/docker-compose.yml): Local NVR with AI object detection + Notifications
 * [Homepage](https://github.com/vfedetz/homelab/blob/main/docker-compose/homepage/docker-compose.yml): Custom homepage for homelab services
 * [Immich](https://github.com/vfedetz/homelab/blob/main/docker-compose/immich/docker-compose.yml): Photo/Video Manager
 * [Joplin](https://github.com/vfedetz/homelab/blob/main/docker-compose/joplin/docker-compose.yml): Open source note-taking app
