@@ -49,11 +49,11 @@ homelab/
 * [SearXNG](https://github.com/vfedetz/homelab/blob/main/docker-compose/searxng/docker-compose.yml): Metasearch engine + VPN proxy
   
 ## Configuration
-Each service directory contains a docker-compose.yml file which can be customized to fit your needs. Common configurations include:
+Each service directory contains a docker-compose.yml file and (if required) a .env.example file which can be customized to fit your needs. Common env configurations include:
 
 * Ports
-* Environment variables
-* Volumes
+* Hostnames/IPs
+* Usernames/Passwords
 
 Modify these settings according to your specific requirements before starting the services.
 
