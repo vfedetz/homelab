@@ -52,7 +52,9 @@ homelab/
 Each service directory contains a docker-compose.yml file and (if required) a .env.example file which can be customized to fit your needs. Common env configurations include:
 
 * Ports
-* Hostnames/IPs
+* IPs
+* Hostnames
+* Domains
 * Usernames/Passwords
 
 Modify these settings according to your specific requirements before starting the services.
