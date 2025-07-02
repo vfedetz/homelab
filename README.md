@@ -12,6 +12,7 @@ This repository serves as a collection of Docker/container configurations, utili
 4. [License](#license)
 
 ## 📁 Project Structure
+```
 homelab/
 │
 ├─ docker-compose/
@@ -28,6 +29,7 @@ homelab/
 │
 ├─ README.md
 └─ ...
+```
 
 ## 🐳 Docker Services 
 
@@ -39,4 +41,4 @@ This folder contains useful scripts and utilities for managing and automating ta
 
 ## 📜 License 
 
-This project is licensed under the MIT License . Feel free to use, modify, and distribute the code as needed. Please see the license file for more details.
+This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as needed. Please see the license file for more details.
