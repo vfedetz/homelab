@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  vaultwarden:
+    image: vaultwarden/server
+    container_name: vaultwarden
+    restart: unless-stopped
+    #user: 1000:1000 # seems to break stuff
+    volumes:
+      - ${BASE_DIR}/vaultwarden/:/data/
+    ports:
+      - ${VAULTWARDEN_PORT_1}:3012
+      - ${VAULTWARDEN_PORT_2}:80
+    environment:
+      - SIGNUPS_ALLOWED:FALSE
+
+  vw_backup:
+    image: bruceforce/vaultwarden-backup
+    container_name: vaultwarden-backup
+    restart: unless-stopped
+    init: true
+    volumes:
+      - ${BASE_DIR}/vaultwarden:/data/
+      - ${BASE_DIR}/vaultwarden-backup/backups:/backups/
+      - ${BASE_DIR}/vaultwarden-backup/logs:/logs/
+    environment:
+      - BACKUP_DIR=/backups/
+      - LOG_DIR=/logs/
+      # EVERY DAY @ 5am
+      - CRON_TIME=0 5 * * *
+      - DELETE_AFTER=60
+      - TIMESTAMP=true
+      - UID=1000 # enter user that has docker permission
+      - GID=1000 # enter group ID for docker
+      - BACKUP_ADD_DATABASE=true
+      - BACKUP_ADD_ATTACHMENTS=true
+      - BACKUP_ADD_CONFIG_JSON=true
+      - BACKUP_ADD_ICON_CACHE=true
+      - BACKUP_ADD_RSA_KEY=true
+      - LOG_LEVEL=INFO
+      - TZ=America/New_York
