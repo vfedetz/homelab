@@ -31,6 +31,8 @@ services:
       #- HTTP_CONTROL_SERVER_ADDRESS=:8000
       - UPDATER_PERIOD=24h #update the servers information for the currently in-use VPN service provider.
     restart: unless-stopped
+    env_file:
+      - /home/vfedetz/docker/searxng/.env
 
   searxng:
     container_name: searxng
@@ -58,6 +60,8 @@ services:
       options:
         max-size: "1m"
         max-file: "1"
+    env_file:
+      - /home/vfedetz/docker/searxng/.env
 
   redis:
     container_name: searxng-redis
