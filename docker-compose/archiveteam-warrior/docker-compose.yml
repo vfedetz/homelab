@@ -11,11 +11,11 @@ services:
       options:
         max-size: "50m"
     environment:
-      DOWNLOADER: kan
-      SELECTED_PROJECT: "usgovernment"
+      DOWNLOADER: ${ATW_USERNAME}
+      SELECTED_PROJECT: ${ATW_PROJECT}
       CONCURRENT_ITEMS: 6
     deploy:
       mode: replicated
       # This will spin up however many warrior replicas you specify
-      replicas: 6
+      replicas: ${ATW_REPLICAS}
       endpoint_mode: vip
