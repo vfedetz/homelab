@@ -9,10 +9,11 @@ Feel free to explore, use, and modify these files to suit your own homelab needs
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Project Structure](#project-structure)
-3. [Services](#services)
-4. [Configuration](#configuration)
-5. [License](#license)
-6. [Contact](#contact)
+3. [Hardware Stack](#hardware-stack)
+4. [Services](#services)
+5. [Configuration](#configuration)
+6. [License](#license)
+7. [Contact](#contact)
 
 ## Introduction
 This repository aims to simplify the setup and management of containerized services in a homelab environment using Docker-Compose. Each service is defined in a separate Docker-Compose file, making it easy to start, stop, and configure as needed.
@@ -30,7 +31,12 @@ homelab/
 ├─ README.md
 └─ ...
 ```
-
+## Hardware Stack
+* Byakko: Proxmox (Primary Hypervisor)
+* Tiamat: Proxmox (Secondary Hypervisor)
+* Shiva: NAS (49.1TB Raw / 38.5TB Usable)
+* Odin: Remote Backup Target
+  
 ## Services
 
 * [ArchiveTeam-Warrior](https://github.com/vfedetz/homelab/blob/main/docker-compose/archiveteam-warrior/docker-compose.yml): Virtual appliance to help with the ArchiveTeam archiving efforts.
