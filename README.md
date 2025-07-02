@@ -35,10 +35,10 @@ homelab/
 └─ ...
 ```
 ## Hardware Stack
-* **Byakko**: Minisforum MS-01 running Proxmox (Primary Hypervisor)
-* **Tiamat**: Beelink S12 Pro running Proxmox (Secondary Hypervisor)
-* **Shiva**: Synology DS1019+ (NAS)
-* **Odin**: Raspberry Pi 4B (Offsite Backup Target)
+* "**Byakko**": Minisforum MS-01 running Proxmox (Primary Hypervisor)
+* "**Tiamat**": Beelink S12 Pro running Proxmox (Secondary Hypervisor)
+* "**Shiva**": Synology DS1019+ (NAS)
+* "**Odin**": Raspberry Pi 4B (Offsite Backup Target)
   
 ## Services
 
