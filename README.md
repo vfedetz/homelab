@@ -4,14 +4,7 @@
 
 This repository serves as a collection of Docker/container configurations, utilities, and automation scripts for my personal homelab environment.
 
-## 🔑 Table of Contents
-
-1. [Project Structure](#project-structure)
-2. [Docker Services](#docker-services)
-3. [Utilities & Scripts](#utilities--scripts)
-4. [License](#license)
-
-## 📁 Project Structure <project-structure>
+## 📁 Project Structure
 ```
 homelab/
 │
