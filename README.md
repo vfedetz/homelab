@@ -1,6 +1,8 @@
 # Homelab
 
-This repository serves as a collection of Docker/container configurations, utilities, and automation scripts used to manage and orchestrate various services within my homelab environment. Each service has its own directory containing a docker-compose.yml file and any necessary supporting files (e.g., environment variables). Feel free to explore, use, and modify these files to suit your own homelab needs. Contributions and suggestions are welcome!
+This repository serves as a collection of Docker/container configurations, utilities, and automation scripts used to manage and orchestrate various services within my homelab environment. Each service has its own directory containing a docker-compose.yml file and any necessary supporting files (e.g., environment variables).
+
+Feel free to explore, use, and modify these files to suit your own homelab needs!
 
 ## Table of Contents
 1. [Introduction](#introduction)
