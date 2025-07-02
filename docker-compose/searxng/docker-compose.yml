@@ -1,7 +1,7 @@
 services:
   gluetun:
     image: qmcgaw/gluetun:latest
-    container_name: gluetun-searxng
+    container_name: searxng-gluetun
     cap_add:
       - NET_ADMIN
     devices:
