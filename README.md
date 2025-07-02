@@ -35,6 +35,8 @@ homelab/
 └─ ...
 ```
 ## Hardware Stack
+
+* **"Kirin"**: Topton N100 Mini PC running OPNsense (Router/Firewall/DHCP/DNS)
 * **"Byakko"**: Minisforum MS-01 running Proxmox (Primary Hypervisor)
 * **"Tiamat"**: Beelink S12 Pro running Proxmox (Secondary Hypervisor)
 * **"Shiva"**: Synology DS1019+ (NAS)
