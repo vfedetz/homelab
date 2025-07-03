@@ -94,6 +94,11 @@ homelab/
         <td>Aggregates results from various search services + a VPN proxy</td>
     </tr>
     <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg"></td>
+        <td><a href="https://github.com/louislam/uptime-kuma">Uptime-Kuma</a></td>
+        <td>Availability monitoring and alerting for internal services</td>
+    </tr>
+    <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/vaultwarden-light.svg"></td>
         <td><a href="https://github.com/dani-garcia/vaultwarden">Vaultwarden</a></td>
         <td>Syncronized password vault + Secure backup solution</td>
