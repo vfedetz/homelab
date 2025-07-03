@@ -2,10 +2,7 @@
 
 ![Homepage](assets/homepage.png)
 
-
-The purpose of my homelab is to learn and to have fun - where I can try out and experiment with technology.
-
-This repository serves as a collection of Docker/container configurations, utilities, and automation scripts used to manage and orchestrate various services within my homelab environment. Each service has its own directory containing a docker-compose.yml file and any necessary supporting files (ex: environment variable templates).
+The purpose of my homelab is to learn and to have fun - where I can try out and experiment with technology. I place an emphasis on hosting my own privacy-focused alternatives to the typical "free" cloud services.
 
 Feel free to explore, use, and modify these files to suit your own homelab needs!
 
@@ -19,7 +16,7 @@ Feel free to explore, use, and modify these files to suit your own homelab needs
 7. [Contact](#contact)
 
 ## Introduction
-This repository aims to simplify the setup and management of containerized services in my homelab environment. Each service is defined in a separate docker-compose.yml file, making it easy to start, stop, and configure as needed. Adding version control to these container configurations will protect me from myself when I fiddle around with them and they inevitably break.
+This repository aims to simplify the setup and management of my containerized services by collecting various container configurations, utilities, and automation scripts used to manage and orchestrate services within my homelab environment. Each service has its own directory containing a docker-compose.yml file and any necessary supporting files (ex: environment variable templates). Adding version control to these container configurations will protect me from myself when I inevitably fiddle around with them and they break.
 
 ## Project Structure
 ```
@@ -71,7 +68,7 @@ homelab/
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg"></td>
         <td><a href="https://github.com/immich-app/immich">Immich</a></td>
-        <td>Automated photo backup and management</td>
+        <td>Automated private photo backup and management</td>
     </tr>
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/joplin.svg"></td>
