@@ -98,7 +98,7 @@ homelab/
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/reactive-resume.svg"></td>
         <td><a href="https://github.com/AmruthPillai/Reactive-Resume">Reactive Resume</a></td>
-        <td>Private resume building rool</td>
+        <td>Private resume building tool</td>
     </tr>
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/redlib.svg"></td>
