@@ -54,6 +54,11 @@ homelab/
         <td>Virtual appliance to help with the ArchiveTeam archiving efforts</td>
     </tr>
     <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cloudflared.svg"></td>
+        <td><a href="https://github.com/cloudflare/cloudflared">cloudflared</a></td>
+        <td>Proxies traffic from the Cloudflare network to my exposed services without port forwarding.</td>
+    </tr>
+    <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/frigate-light.svg"></td>
         <td><a href="https://github.com/blakeblackshear/frigate">Frigate</a></td>
         <td>Local NVR with AI object detection + Notifications</td>
