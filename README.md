@@ -86,17 +86,17 @@ homelab/
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ollama.svg"></td>
         <td><a href="https://github.com/ollama/ollama">Ollama</a></td>
-        <td>Local AI LLM + Web UI</td>
+        <td>Local AI LLM + a Web UI</td>
     </tr>
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/searxng.svg"></td>
         <td><a href="https://github.com/searxng/searxng">SearXNG</a></td>
-        <td>Metasearch engine which aggregates results from various search services + VPN proxy</td>
+        <td>Aggregates results from various search services + a VPN proxy</td>
     </tr>
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/vaultwarden-light.svg"></td>
         <td><a href="https://github.com/dani-garcia/vaultwarden">Vaultwarden</a></td>
-        <td>Syncronized password vault compatible with Bitwarden</td>
+        <td>Syncronized password vault + Secure backup solution</td>
     </tr>
 
 </table>
