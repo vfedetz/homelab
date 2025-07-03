@@ -43,7 +43,7 @@ homelab/
     <tr>
         <th>Logo</th>
         <th>Name</th>
-        <th>Description</th>
+        <th>Service Description</th>
     </tr>
     <tr>
         <td><img width="32" src="assets/warrior-logo.png"></td>
