@@ -43,15 +43,54 @@ homelab/
 * **"Odin"**: Raspberry Pi 4B (Offsite Backup Target)
   
 ## Services
+<table>
+    <tr>
+        <th>Logo</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><img width="32" src="assets/warrior-logo.png"></td>
+        <td><a href="http://warrior.archiveteam.org/">ArchiveTeam-Warrior</a></td>
+        <td>Virtual appliance to help with the ArchiveTeam archiving efforts.</td>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/frigate-light.svg"></td>
+        <td><a href="https://github.com/blakeblackshear/frigate">Frigate</a></td>
+        <td>Local NVR with AI object detection + Notifications</td>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://www.svgrepo.com/download/499807/home-page.svg"></td>
+        <td><a href="https://github.com/gethomepage/homepage">Homepage</a></td>
+        <td>My custom homepage for homelab services</td>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg"></td>
+        <td><a href="https://github.com/immich-app/immich">Immich</a></td>
+        <td>Automated photo backup and management</td>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/joplin.svg"></td>
+        <td><a href="https://github.com/laurent22/joplin">Joplin</a></td>
+        <td>Privacy-focused note taking app with sync capabilities</td>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ollama.svg"></td>
+        <td><a href="https://github.com/ollama/ollama">Ollama</a></td>
+        <td>Local AI LLM + Web UI</td>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/searxng.svg"></td>
+        <td><a href="https://github.com/searxng/searxng">SearXNG</a></td>
+        <td>Metasearch engine which aggregates results from various search services + VPN proxy</td>
+    </tr>
+    <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/vaultwarden-light.svg"></td>
+        <td><a href="https://github.com/dani-garcia/vaultwarden">Vaultwarden</a></td>
+        <td>Syncronized password vault compatible with Bitwarden</td>
+    </tr>
 
-* [ArchiveTeam-Warrior](https://github.com/vfedetz/homelab/blob/main/docker-compose/archiveteam-warrior/docker-compose.yml): Virtual appliance to help with the ArchiveTeam archiving efforts.
-* [Frigate](https://github.com/vfedetz/homelab/blob/main/docker-compose/frigate/docker-compose.yml): Local NVR with AI object detection + Notifications
-* [Homepage](https://github.com/vfedetz/homelab/blob/main/docker-compose/homepage/docker-compose.yml): Custom homepage for homelab services
-* [Immich](https://github.com/vfedetz/homelab/blob/main/docker-compose/immich/docker-compose.yml): Photo backup and management
-* [Joplin](https://github.com/vfedetz/homelab/blob/main/docker-compose/joplin/docker-compose.yml): Syncronized note-taking app
-* [Ollama](https://github.com/vfedetz/homelab/blob/main/docker-compose/ollama/docker-compose.yml): Local AI LLM + Web UI
-* [SearXNG](https://github.com/vfedetz/homelab/blob/main/docker-compose/searxng/docker-compose.yml): Metasearch engine + VPN proxy
-* [Vaultwarden](https://github.com/vfedetz/homelab/blob/main/docker-compose/vaultwarden/docker-compose.yml): Syncronized password vault compatible with Bitwarden
+</table>
   
 ## Configuration
 Each service directory contains a docker-compose.yml file and (if required) a .env.example file which can be customized to fit your needs. Common env configurations include:
