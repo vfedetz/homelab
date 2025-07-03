@@ -79,7 +79,7 @@ homelab/
         <td>Privacy-focused note taking app with sync capabilities</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/npm.svg"></td>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nginx-proxy-manager.svg"></td>
         <td><a href="https://github.com/NginxProxyManager/nginx-proxy-manager">NPM</a></td>
         <td>Nginx reverse proxy for homelab services with SSL termination and a pretty UI</td>
     </tr>
