@@ -51,7 +51,7 @@ homelab/
     <tr>
         <td><img width="32" src="assets/warrior-logo.png"></td>
         <td><a href="http://warrior.archiveteam.org/">ArchiveTeam-Warrior</a></td>
-        <td>Virtual appliance to help with the ArchiveTeam archiving efforts.</td>
+        <td>Virtual appliance to help with the ArchiveTeam archiving efforts</td>
     </tr>
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/frigate-light.svg"></td>
