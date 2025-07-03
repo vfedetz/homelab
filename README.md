@@ -56,7 +56,7 @@ homelab/
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cloudflare.svg"></td>
         <td><a href="https://github.com/cloudflare/cloudflared">Cloudflared</a></td>
-        <td>Proxies traffic from the Cloudflare network to my exposed services without port forwarding.</td>
+        <td>Proxies traffic from Cloudflare to my exposed services without port forwarding.</td>
     </tr>
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/frigate-light.svg"></td>
