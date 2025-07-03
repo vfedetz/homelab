@@ -5,7 +5,7 @@
 
 The purpose of my homelab is to learn and to have fun - where I can try out and experiment with technology.
 
-This repository serves as a collection of Docker/container configurations, utilities, and automation scripts used to manage and orchestrate various services within my homelab environment. Each service has its own directory containing a docker-compose.yml file and any necessary supporting files (e.g., environment variables).
+This repository serves as a collection of Docker/container configurations, utilities, and automation scripts used to manage and orchestrate various services within my homelab environment. Each service has its own directory containing a docker-compose.yml file and any necessary supporting files (ex: environment variable templates).
 
 Feel free to explore, use, and modify these files to suit your own homelab needs!
 
@@ -19,7 +19,7 @@ Feel free to explore, use, and modify these files to suit your own homelab needs
 7. [Contact](#contact)
 
 ## Introduction
-This repository aims to simplify the setup and management of containerized services in a homelab environment using Docker-Compose. Each service is defined in a separate Docker-Compose file, making it easy to start, stop, and configure as needed.
+This repository aims to simplify the setup and management of containerized services in my homelab environment. Each service is defined in a separate docker-compose.yml file, making it easy to start, stop, and configure as needed. Adding version control to these container configurations will protect me from myself when I fiddle around with them and they inevitably break.
 
 ## Project Structure
 ```
@@ -28,10 +28,9 @@ homelab/
 ├─ docker-compose/
 │  ├─ <service-name>/
 │  │  ├─ docker-compose.yml
+│  │  ├─ .env.example
 │  │  └─ ...
 │  └─ ...
-│
-├─ README.md
 └─ ...
 ```
 ## Hardware Stack
@@ -95,11 +94,9 @@ homelab/
 ## Configuration
 Each service directory contains a docker-compose.yml file and (if required) a .env.example file which can be customized to fit your needs. Common env configurations include:
 
-* Ports
-* IPs
-* Hostnames
-* Domains
-* Usernames/Passwords
+* IPs / Ports
+* Hostnames / Domains
+* Usernames / Passwords
 
 Modify these settings according to your specific requirements before starting the services.
 
