@@ -86,6 +86,11 @@ homelab/
         <td>Local AI LLM + a Web UI</td>
     </tr>
     <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/radicale.svg"></td>
+        <td><a href="https://github.com/Kozea/Radicale">Radicale</a></td>
+        <td>Simple CalDAV (calendar) and CardDAV (contact) server</td>
+    </tr>
+    <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/searxng.svg"></td>
         <td><a href="https://github.com/searxng/searxng">SearXNG</a></td>
         <td>Aggregates results from various search services + a VPN proxy</td>
