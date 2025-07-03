@@ -96,6 +96,11 @@ homelab/
         <td>Simple CalDAV (calendar) and CardDAV (contact) server</td>
     </tr>
     <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/redlib.svg"></td>
+        <td><a href="https://github.com/redlib-org/redlib">Redlib</a></td>
+        <td>Private front-end for Reddit + a VPN Proxy</td>
+    </tr>
+    <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/searxng.svg"></td>
         <td><a href="https://github.com/searxng/searxng">SearXNG</a></td>
         <td>Aggregates results from various search services + a VPN proxy</td>
