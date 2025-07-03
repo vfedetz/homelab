@@ -96,6 +96,11 @@ homelab/
         <td>Simple CalDAV (calendar) and CardDAV (contact) server</td>
     </tr>
     <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/reactive-resume.svg"></td>
+        <td><a href="https://github.com/AmruthPillai/Reactive-Resume">Reactive Resume</a></td>
+        <td>Private resume building rool</td>
+    </tr>
+    <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/redlib.svg"></td>
         <td><a href="https://github.com/redlib-org/redlib">Redlib</a></td>
         <td>Private front-end for Reddit + a VPN Proxy</td>
