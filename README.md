@@ -86,6 +86,11 @@ homelab/
         <td>Local AI LLM + a Web UI</td>
     </tr>
     <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/paperless-ngx.svg"></td>
+        <td><a href="https://github.com/paperless-ngx/paperless-ngx">Paperless-Ngx</a></td>
+        <td>Searchable document management system</td>
+    </tr>
+    <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/radicale.svg"></td>
         <td><a href="https://github.com/Kozea/Radicale">Radicale</a></td>
         <td>Simple CalDAV (calendar) and CardDAV (contact) server</td>
