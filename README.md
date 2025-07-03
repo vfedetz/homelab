@@ -53,7 +53,7 @@ homelab/
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cloudflare.svg"></td>
         <td><a href="https://github.com/cloudflare/cloudflared">Cloudflared</a></td>
-        <td>Proxies traffic from Cloudflare to my exposed services without port forwarding.</td>
+        <td>Proxies traffic from Cloudflare to exposed services without port forwarding</td>
     </tr>
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/frigate-light.svg"></td>
@@ -78,7 +78,7 @@ homelab/
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nginx-proxy-manager.svg"></td>
         <td><a href="https://github.com/NginxProxyManager/nginx-proxy-manager">NPM</a></td>
-        <td>Nginx reverse proxy for homelab services with SSL termination and a pretty UI</td>
+        <td>Nginx reverse proxy for services - with SSL termination and a pretty UI</td>
     </tr>
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/ollama.svg"></td>
