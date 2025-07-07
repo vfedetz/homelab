@@ -44,6 +44,8 @@ services:
       # - seccomp=seccomp-redlib.json
     cap_drop:
       - ALL
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false" # Don't let watchtower auto-update
     environment:
       # Redlib configuration
       # See the Configuration section of the README for a more detailed explanation of these settings.
