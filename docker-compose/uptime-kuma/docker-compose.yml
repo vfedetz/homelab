@@ -3,7 +3,7 @@ services:
     container_name: uptime-kuma
     image: louislam/uptime-kuma:${UPTIME_KUMA_VER}
     volumes:
-      - ${BASE_DIR}:/app/data
+      - ${BASE_DIR}/uptime-kuma:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - ${UPTIME_KUMA_PORT}:3001
