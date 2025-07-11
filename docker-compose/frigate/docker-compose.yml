@@ -2,7 +2,7 @@ services:
   frigate:
     container_name: frigate
     privileged: true # this may not be necessary for all setups
-    restart: unless-stopped
+    restart: always
     stop_grace_period: 30s # allow enough time to shut down the various services
     image: ghcr.io/blakeblackshear/frigate:stable
     cap_add:
