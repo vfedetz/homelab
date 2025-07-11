@@ -113,6 +113,11 @@ homelab/
         <td>Aggregates results from various search services + a VPN proxy</td>
     </tr>
     <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tailscale.svg"></td>
+        <td><a href="https://github.com/searxng/searxng">Tailscale Exit Node</a></td>
+        <td>Local VPN exit node routed through an external VPN proxy</td>
+    </tr>
+    <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg"></td>
         <td><a href="https://github.com/louislam/uptime-kuma">Uptime-Kuma</a></td>
         <td>Availability monitoring and alerting for internal services</td>
