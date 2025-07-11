@@ -2,6 +2,7 @@
 ##############################################
 # file: backup_docker.sh
 # desc: backup docker container mounted volumes to remote nas
+# notes: assumes RSYNC_USER has ssh keys setup on RSYNC_HOST
 ##############################################
 
 # Load the .env file
