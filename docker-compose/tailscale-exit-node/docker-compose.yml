@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     container_name: tailscale-gluetun
     ports:
-      - 8125:8000
+      - 8125:8000/tcp
     cap_add:
       - NET_ADMIN
     devices:
