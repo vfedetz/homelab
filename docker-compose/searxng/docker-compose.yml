@@ -12,7 +12,7 @@ services:
       - 8888:8888/tcp # HTTP proxy
       - 8388:8388/tcp # Shadowsocks
       - 8388:8388/udp # Shadowsocks
-      #- 8122:8000/tcp # HTTP control server
+      - 8123:8000/tcp # HTTP control server
       - 8786:8080 # port for searxng
     volumes:
       - /home/vfedetz/docker/gluetun:/gluetun
@@ -29,8 +29,8 @@ services:
       - SHADOWSOCKS=off #change to on if you wish to enable
       - FIREWALL_OUTBOUND_SUBNETS=172.20.0.0/16,192.168.1.0/24 #change this in line with your subnet see note on guide.
 #      - FIREWALL_VPN_INPUT_PORTS=40312 #uncomment this line and change the port as per the note on the guide
-      #- HTTP_CONTROL_SERVER_LOG=on
-      #- HTTP_CONTROL_SERVER_ADDRESS=:8000
+      - HTTP_CONTROL_SERVER_LOG=on
+      - HTTP_CONTROL_SERVER_ADDRESS=:8000
       - UPDATER_PERIOD=24h #update the servers information for the currently in-use VPN service provider.
     restart: unless-stopped
     env_file:
