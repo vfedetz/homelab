@@ -24,6 +24,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${BASE_DIR}/frigate:/config
       - ${NFS_BASE_DIR}/frigate:/media/frigate
+      - /dev/serial/by-id:/dev/serial/by-id # resolves error after LXC power-on "readdirent /dev/serial/by-id: no such file or directory"
       - type: tmpfs
         target: /tmp/cache
         tmpfs:
