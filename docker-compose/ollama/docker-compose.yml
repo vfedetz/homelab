@@ -2,7 +2,7 @@
 
 services:
   ollama-webui:
-    image: ghcr.io/open-webui/open-webui:main
+    image: ghcr.io/open-webui/open-webui:latest
     container_name: ollama-webui
     restart: unless-stopped
     ports:
