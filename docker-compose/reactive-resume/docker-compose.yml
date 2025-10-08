@@ -36,31 +36,36 @@ services:
 
   # Chrome Browser (for printing and previews)
   chrome:
-    image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
+    image: ghcr.io/browserless/chromium:latest
+    #image: ghcr.io/browserless/chromium:v2.18.0 # Upgrading to newer versions causes issues
     container_name: reactive-resume-chrome
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
+      HEALTH: "true"
       TIMEOUT: 10000
       CONCURRENT: 10
       TOKEN: chrome_token
       EXIT_ON_HEALTH_FAILURE: "true"
       PRE_REQUEST_HEALTH_CHECK: "true"
+      PROXY_HOST: "chrome"
+      PROXY_PORT: 3000
+      PROXY_SSL: "false"
 
   app:
     image: amruthpillai/reactive-resume:${REACTIVE_RESUME_VER}
     container_name: reactive-resume-app
     restart: unless-stopped
     ports:
-      - ${REACTIVE_RESUME_PORT}:3222
+      - ${REACTIVE_RESUME_PORT}:3000
     depends_on:
       - postgres
       - minio
       - chrome
     environment:
       # -- Environment Variables --
-      PORT: 3222
+      PORT: 3000
       NODE_ENV: production
 
       # -- URLs --
