@@ -6,7 +6,12 @@ services:
     restart: unless-stopped
     container_name: tailscale-gluetun
     ports:
-      - 8125:8000/tcp
+      - 8888:8888/tcp # HTTP proxy
+      - 8388:8388/tcp # Shadowsocks
+      - 8388:8388/udp # Shadowsocks
+      #- 8125:8000/tcp
+    volumes:
+      - ${BASE_DIR}/gluetun:/gluetun
     cap_add:
       - NET_ADMIN
     devices:
