@@ -58,7 +58,7 @@ services:
       PROXY_HOST: "chrome"
       PROXY_PORT: 3000
       PROXY_SSL: "false"
-   labels:
+    labels:
       - "nautical-backup.group=reactive-resume"
       - "nautical-backup.group.reactive-resume.priority=101"
 
