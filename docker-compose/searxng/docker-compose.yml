@@ -8,6 +8,7 @@ services:
       - /dev/net/tun:/dev/net/tun
     labels:
       - "com.centurylinklabs.watchtower.enable=false" # Don't let watchtower auto-update
+      - "nautical-backup.group=searxng" # for docker persitant volume backups via nautical-backup 
     ports:
       - 8888:8888/tcp # HTTP proxy
       - 8388:8388/tcp # Shadowsocks
@@ -59,6 +60,7 @@ services:
       - SETUID
     labels:
       - "com.centurylinklabs.watchtower.enable=false" # Don't let watchtower auto-update
+      - "nautical-backup.group=searxng" # for docker persitant volume backups via nautical-backup
     logging:
       driver: "json-file"
       options:
@@ -78,6 +80,8 @@ services:
         condition: service_healthy
     volumes:
       - /home/vfedetz/docker/searxng/valkey-data2:/data
+    labels:
+      - "nautical-backup.group=searxng" # for docker persitant volume backups via nautical-backup
     cap_drop:
       - ALL
     cap_add:
