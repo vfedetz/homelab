@@ -9,7 +9,7 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
       - "nautical-backup.group=searxng"
-      - "nautical-backup.group.searxng.priority=110"
+      - "nautical-backup.group.searxng.priority=103"
     ports:
       - 8888:8888/tcp # HTTP proxy
       - 8388:8388/tcp # Shadowsocks
@@ -84,7 +84,7 @@ services:
       - /home/vfedetz/docker/searxng/valkey-data2:/data
     labels:
       - "nautical-backup.group=searxng"
-      - "nautical-backup.group.searxng.priority=90"
+      - "nautical-backup.group.searxng.priority=102"
     cap_drop:
       - ALL
     cap_add:
