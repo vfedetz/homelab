@@ -11,7 +11,7 @@ services:
       - 8388:8388/udp # Shadowsocks
       #- 8125:8000/tcp
     volumes:
-      - ${BASE_DIR}/gluetun-tailscale:/gluetun
+      - ${BASE_DIR}/tailscale-gluetun:/gluetun
     cap_add:
       - NET_ADMIN
     devices:
