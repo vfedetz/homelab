@@ -8,6 +8,8 @@ services:
       - /dev/net/tun:/dev/net/tun
     labels:
       - "com.centurylinklabs.watchtower.enable=false" # Don't let watchtower auto-update
+      - "nautical-backup.group=redlib"
+      - "nautical-backup.group.redlib.priority=101"
     ports:
       - 8889:8888/tcp # HTTP proxy
       - 8389:8388/tcp # Shadowsocks
@@ -15,7 +17,7 @@ services:
       - 8124:8000/tcp # HTTP control server
       - ${REDLIB_PORT}:8080 # port for redlib
     volumes:
-      - ${BASE_DIR}/gluetun:/gluetun
+      - ${BASE_DIR}/redlib-gluetun:/gluetun
     environment:
       - PUID=1000
       - PGID=1000
@@ -48,6 +50,8 @@ services:
       - ALL
     labels:
       - "com.centurylinklabs.watchtower.enable=false" # Don't let watchtower auto-update
+      - "nautical-backup.group=redlib"
+      - "nautical-backup.group.redlib.priority=101"
     environment:
       # Redlib configuration
       # See the Configuration section of the README for a more detailed explanation of these settings.
