@@ -11,7 +11,7 @@ services:
       - 8388:8388/udp # Shadowsocks
       #- 8125:8000/tcp
     volumes:
-      - ${BASE_DIR}/gluetun:/gluetun
+      - ${BASE_DIR}/gluetun-tailscale:/gluetun
     cap_add:
       - NET_ADMIN
     devices:
@@ -33,6 +33,9 @@ services:
       - HTTP_CONTROL_SERVER_ADDRESS=:8000
       - UPDATER_PERIOD=24h #update the servers information for the currently in-use VPN service provider.
       - DNS_ADDRESS=${DNS_ADDRESS}
+    labels:
+      - "nautical-backup.group=tailscale-vpn-exit-node"
+      - "nautical-backup.group.tailscale-vpn-exit-node.priority=101"
 
   tailscale-vpn-exit-node:
     image: tailscale/tailscale:latest
@@ -55,3 +58,6 @@ services:
     depends_on:
       gluetun:
         condition: service_healthy
+      labels:
+      - "nautical-backup.group=tailscale-vpn-exit-node"
+      - "nautical-backup.group.tailscale-vpn-exit-node.priority=100"
