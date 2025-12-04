@@ -58,6 +58,6 @@ services:
     depends_on:
       gluetun:
         condition: service_healthy
-      labels:
+    labels:
       - "nautical-backup.group=tailscale-vpn-exit-node"
       - "nautical-backup.group.tailscale-vpn-exit-node.priority=100"
