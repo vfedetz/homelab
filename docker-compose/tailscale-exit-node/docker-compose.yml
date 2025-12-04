@@ -48,7 +48,7 @@ services:
       - TS_HOSTNAME=npm-vpn-exit
       - TS_ROUTES=192.168.1.0/24
     volumes:
-      - ${BASE_DIR}/tailscale:/var/lib/tailscale
+      - ${BASE_DIR}/tailscale-vpn-exit-node:/var/lib/tailscale
     devices:
       - /dev/net/tun:/dev/net/tun
     cap_add:
