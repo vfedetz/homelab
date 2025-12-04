@@ -15,7 +15,7 @@ services:
       - 8123:8000/tcp # HTTP control server
       - 8786:8080 # port for searxng
     volumes:
-      - /home/vfedetz/docker/gluetun:/gluetun
+      - /home/vfedetz/docker/searxng-gluetun:/gluetun
     environment:
       - PUID=1000
       - PGID=1000
