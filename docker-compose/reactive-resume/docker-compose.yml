@@ -19,6 +19,9 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    labels:
+      - "nautical-backup.group=reactive-resume"
+      - "nautical-backup.group.reactive-resume.priority=103"
 
   # Storage (for image uploads)
   minio:
@@ -33,6 +36,9 @@ services:
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    labels:
+      - "nautical-backup.group=reactive-resume"
+      - "nautical-backup.group.reactive-resume.priority=102"
 
   # Chrome Browser (for printing and previews)
   chrome:
@@ -52,6 +58,9 @@ services:
       PROXY_HOST: "chrome"
       PROXY_PORT: 3000
       PROXY_SSL: "false"
+   labels:
+      - "nautical-backup.group=reactive-resume"
+      - "nautical-backup.group.reactive-resume.priority=101"
 
   app:
     image: amruthpillai/reactive-resume:${REACTIVE_RESUME_VER}
@@ -63,6 +72,9 @@ services:
       - postgres
       - minio
       - chrome
+    labels:
+      - "nautical-backup.group=reactive-resume"
+      - "nautical-backup.group.reactive-resume.priority=100"
     environment:
       # -- Environment Variables --
       PORT: 3000
