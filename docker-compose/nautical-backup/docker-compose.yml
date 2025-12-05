@@ -1,0 +1,13 @@
+services:
+  nautical-backup:
+    image: minituff/nautical-backup:latest
+    container_name: nautical-backup
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+      - ${DOCKER_DIR}/nautical-backup/config:/config 
+      - ${DOCKER_DIR}:/app/source 
+      - ${NFS_MOUNT}/{ENV}:/app/destination 
+    environment:
+      - TZ=America/New_York
+      - CRON_SCHEDULE=0 1 * * * # daily at 1am
+      - BACKUP_ON_START=false
