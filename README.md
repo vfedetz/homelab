@@ -79,7 +79,7 @@ homelab/
         <td>Privacy-focused note taking app with sync capabilities</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nautical-backup.svg"></td>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/nautical-backup.webp"></td>
         <td><a href="https://github.com/minituff/nautical-backup">Nautical Backup</a></td>
         <td>Docker volume backup tool</td>
     </tr>
