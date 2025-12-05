@@ -79,6 +79,11 @@ homelab/
         <td>Privacy-focused note taking app with sync capabilities</td>
     </tr>
     <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nautical-backup.svg"></td>
+        <td><a href="https://github.com/minituff/nautical-backup">Nautical Backup</a></td>
+        <td>Docker volume backup tool</td>
+    </tr>
+    <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/nginx-proxy-manager.svg"></td>
         <td><a href="https://github.com/NginxProxyManager/nginx-proxy-manager">NPM</a></td>
         <td>Nginx reverse proxy for services - with SSL termination and a pretty UI</td>
@@ -131,7 +136,7 @@ homelab/
     <tr>
         <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/watchtower.svg"></td>
         <td><a href="https://github.com/nicholas-fedor/watchtower">Watchtower</a></td>
-        <td>Automates Docker container image updates </td>
+        <td>Automated Docker container image updates </td>
     </tr>
 
 </table>
