@@ -128,8 +128,8 @@ homelab/
         <td>Syncronized password vault + Secure backup solution</td>
     </tr>
     <tr>
-        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/watchtowersvg"></td>
-        <td><a href="https://github.com/nicholas-fedor/watchtower">Vaultwarden</a></td>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/watchtower.svg"></td>
+        <td><a href="https://github.com/nicholas-fedor/watchtower">Watchtower</a></td>
         <td>Automates Docker container image updates </td>
     </tr>
 
