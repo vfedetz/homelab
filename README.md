@@ -127,6 +127,11 @@ homelab/
         <td><a href="https://github.com/dani-garcia/vaultwarden">Vaultwarden</a></td>
         <td>Syncronized password vault + Secure backup solution</td>
     </tr>
+    <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/watchtowersvg"></td>
+        <td><a href="https://github.com/nicholas-fedor/watchtower">Vaultwarden</a></td>
+        <td>Automates Docker container image updates </td>
+    </tr>
 
 </table>
   
