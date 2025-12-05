@@ -1,0 +1,19 @@
+services:
+  watchtower:
+    image: ghcr.io/nicholas-fedor/watchtower:latest
+    container_name: watchtower
+    environment:
+      - TZ=America/New_York
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_INCLUDE_STOPPED=true
+      - WATCHTOWER_REVIVE_STOPPED=false
+      - WATCHTOWER_SCHEDULE= 0 0 3 * * 0 # Every Sunday at 3am
+      - WATCHTOWER_MONITOR_ONLY=false
+      - WATCHTOWER_NOTIFICATIONS=gotify
+      - WATCHTOWER_NOTIFICATION_GOTIFY_URL=${GOTIFY_URL}
+      - WATCHTOWER_NOTIFICATION_GOTIFY_TOKEN=${GOTIFY_TOKEN}
+      - WATCHTOWER_NOTIFICATION_TITLE_TAG=${HOSTNAME}
+      - WATCHTOWER_NO_STARTUP_MESSAGE=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
