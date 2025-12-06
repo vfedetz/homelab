@@ -2,6 +2,7 @@ services:
   nautical-backup:
     image: minituff/nautical-backup:latest
     container_name: nautical-backup
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock 
       - ${DOCKER_DIR}/nautical-backup/config:/config 
