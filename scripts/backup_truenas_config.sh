@@ -1,4 +1,4 @@
-# Heavily based on:
+# Heavily based on: https://github.com/cavazos-apps/truenas-backup-script
 # Modified by vfedetz to remove github upload - I am sending to google drive via TN Cloud Sync task instead.
 
 # Script to backup TrueNAS SCALE configuration file
