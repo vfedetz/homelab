@@ -15,9 +15,8 @@ services:
       #- WEBUI_SECRET_KEY=your_secret_key_here  # Add this to prevent logouts after updates
     volumes:
       - ${BASE_DIR}/ollama-webui/data:/data
-      #- /mnt/data/models:/models # used to save models to NFS share instead of locally
-      - ${BASE_DIR}/ollama-webui/models:/models
       - ${BASE_DIR}/ollama-webui/webui:/app/backend/data
+      - ${MODEL_DIR}:/models # storing models on NFS share
     logging:
       driver: json-file
       options:
@@ -51,8 +50,7 @@ services:
       - ${OLLAMA_PORT}:11434
     volumes:
       - ${BASE_DIR}/ollama:/root/.ollama
-      #- /mnt/data/models:/models # used to save models to NFS share instead of locally
-      - ${BASE_DIR}/ollama/models:/models
+      - ${MODEL_DIR}:/models # storing models on NFS share
     logging:
       driver: json-file
       options:
