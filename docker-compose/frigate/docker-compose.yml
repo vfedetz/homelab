@@ -60,7 +60,7 @@ services:
     environment:
       FN_CONFIGFILE: /app/config/config.yml
       TZ: America/New_York
-      FN_LOGLEVEL: debug
+      #FN_LOGLEVEL: debug
     volumes:
       - ${BASE_DIR}/frigate-notify:/app/config
     restart: unless-stopped
