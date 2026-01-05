@@ -25,7 +25,7 @@ services:
       - VPN_TYPE=openvpn
       - OPENVPN_USER=${OPENVPN_USER}
       - OPENVPN_PASSWORD=${OPENVPN_PASSWORD}
-      - SERVER_REGIONS=${SERVER_REGIONS} # https://github.com/qdm12/gluetun/wiki/Private-internet-access/7a935e65f41ed74ad4b6c88debb032d9ef6ec279#Servers
+      - SERVER_REGIONS=${SERVER_REGIONS} 
       - TZ=America/New_York
       - HTTPPROXY=off #change to on if you wish to enable
       - SHADOWSOCKS=off #change to on if you wish to enable
