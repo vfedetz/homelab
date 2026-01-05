@@ -37,7 +37,8 @@ services:
     restart: unless-stopped
     
   redlib:
-    image: quay.io/redlib/redlib:${REDLIB_VER}
+    image: ghcr.io/cycneuramus/containers:redlib
+    #image: quay.io/redlib/redlib:${REDLIB_VER}
     restart: always
     container_name: redlib
     network_mode: service:gluetun # run on the vpn network
