@@ -9,6 +9,6 @@ services:
       - ${DOCKER_DIR}:/app/source 
       - ${NFS_MOUNT}/${HOSTNAME}:/app/destination 
     environment:
-      - TZ=America/New_York
+      - TZ=${TZ}
       - CRON_SCHEDULE=0 1 * * * # daily at 1am
       - BACKUP_ON_START=false
