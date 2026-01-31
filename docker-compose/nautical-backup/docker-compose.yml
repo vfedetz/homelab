@@ -7,7 +7,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock 
       - ${DOCKER_DIR}/nautical-backup/config:/config 
       - ${DOCKER_DIR}:/app/source 
-      - ${NFS_MOUNT}/${HOSTNAME}:/app/destination 
+      - ${NFS_DIR}/${HOSTNAME}:/app/destination 
     environment:
       - TZ=${TZ}
       - CRON_SCHEDULE=0 1 * * * # daily at 1am
