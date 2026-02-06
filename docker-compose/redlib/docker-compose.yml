@@ -14,7 +14,7 @@ services:
       - 8889:8888/tcp # HTTP proxy
       - 8389:8388/tcp # Shadowsocks
       - 8389:8388/udp # Shadowsocks
-      - 8124:8000/tcp # HTTP control server
+      #- 8124:8000/tcp # HTTP control server
       - ${REDLIB_PORT}:8080 # port for redlib
     volumes:
       - ${BASE_DIR}/redlib-gluetun:/gluetun
