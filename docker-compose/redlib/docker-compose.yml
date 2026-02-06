@@ -31,14 +31,14 @@ services:
       - SHADOWSOCKS=off #change to on if you wish to enable
       - FIREWALL_OUTBOUND_SUBNETS=172.20.0.0/16,192.168.1.0/24 #change this in line with your subnet see note on guide.
       #- FIREWALL_VPN_INPUT_PORTS=40312 #uncomment this line and change the port as per the note on the guide
-      - HTTP_CONTROL_SERVER_LOG=on
-      - HTTP_CONTROL_SERVER_ADDRESS=:8000
+      #- HTTP_CONTROL_SERVER_LOG=on
+      #- HTTP_CONTROL_SERVER_ADDRESS=:8000
       - UPDATER_PERIOD=24h #update the servers information for the currently in-use VPN service provider.
     restart: unless-stopped
     
   redlib:
-    image: ghcr.io/cycneuramus/containers:redlib
-    #image: quay.io/redlib/redlib:${REDLIB_VER}
+    #image: ghcr.io/cycneuramus/containers:redlib
+    image: quay.io/redlib/redlib:${REDLIB_VER}
     restart: always
     container_name: redlib
     network_mode: service:gluetun # run on the vpn network
