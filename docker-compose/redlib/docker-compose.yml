@@ -18,7 +18,7 @@ services:
       - ${REDLIB_PORT}:8080 # port for redlib
     volumes:
       - ${BASE_DIR}/redlib-gluetun:/gluetun
-      - ${BASE_DIR}/redlib-gluetun/config.toml:/gluetun/auth/config.toml
+      - ${BASE_DIR}/redlib-gluetun/config.toml:/gluetun/auth/config.toml # https://github.com/qdm12/gluetun-wiki/blob/main/setup/advanced/control-server.md#authentication
     environment:
       - PUID=1000
       - PGID=1000
