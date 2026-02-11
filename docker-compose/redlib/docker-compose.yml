@@ -18,6 +18,7 @@ services:
       - ${REDLIB_PORT}:8080 # port for redlib
     volumes:
       - ${BASE_DIR}/redlib-gluetun:/gluetun
+      - ${BASE_DIR}/redlib-gluetun/config.toml:/gluetun/auth/config.toml
     environment:
       - PUID=1000
       - PGID=1000
