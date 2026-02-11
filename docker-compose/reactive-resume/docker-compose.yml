@@ -101,7 +101,7 @@ services:
 
       # -- Storage (Minio) --
       STORAGE_ENDPOINT: minio
-      STORAGE_PORT: 9000
+      STORAGE_PORT: ${MINIO_PORT}
       STORAGE_REGION: us-east-1 # Optional
       STORAGE_BUCKET: default
       STORAGE_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
