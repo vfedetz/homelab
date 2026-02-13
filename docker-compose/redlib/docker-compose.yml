@@ -52,6 +52,7 @@ services:
       - ALL
     labels:
       - "com.centurylinklabs.watchtower.enable=false" # Don't let watchtower auto-update
+      - "nautical-backup.enable=false" # disable nautical backups
       - "nautical-backup.group=redlib"
       - "nautical-backup.group.redlib.priority=100"
     environment:
