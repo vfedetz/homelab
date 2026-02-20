@@ -42,6 +42,8 @@ services:
     container_name: tailscale-vpn-exit-node
     network_mode: service:gluetun
     environment:
+      # Comment out the TS_AUTHKEY line after the container authenticates. Even if the node key is set to not expire,
+      # the auth key does expire and if you still have it in your compose file the container will fail to authenticate.
       #- TS_AUTHKEY=${TS_AUTHKEY}
       - TS_EXTRA_ARGS=--advertise-exit-node --accept-routes # or --advertise-tags=tag:vpn
       - TS_STATE_DIR=/var/lib/tailscale
