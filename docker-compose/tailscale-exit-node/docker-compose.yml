@@ -42,7 +42,7 @@ services:
     container_name: tailscale-vpn-exit-node
     network_mode: service:gluetun
     environment:
-      - TS_AUTHKEY=${TS_AUTHKEY}
+      #- TS_AUTHKEY=${TS_AUTHKEY}
       - TS_EXTRA_ARGS=--advertise-exit-node --accept-routes # or --advertise-tags=tag:vpn
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_HOSTNAME=npm-vpn-exit
