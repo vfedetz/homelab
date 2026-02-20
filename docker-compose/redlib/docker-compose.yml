@@ -55,7 +55,7 @@ services:
       - "nautical-backup.enable=false" # disable nautical backups
       - "nautical-backup.group=redlib"
       - "nautical-backup.group.redlib.priority=100"
-      autoheal: "true"
+      - "autoheal=true" # needed for watchdog container to restart
     environment:
       # Redlib configuration
       # See the Configuration section of the README for a more detailed explanation of these settings.
