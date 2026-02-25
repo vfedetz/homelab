@@ -110,7 +110,6 @@ services:
       # Enable fixed navbar by default
       - REDLIB_DEFAULT_FIXED_NAVBAR=on
     healthcheck:
-      #test: ["CMD", "wget", "--spider", "-q", "--tries=1", "https://${REDLIB_URL}/settings"]
       test: ["CMD", "wget", "--spider", "-q", "--tries=1", "http://localhost:8080/settings"]
       interval: 5m
       timeout: 3s
