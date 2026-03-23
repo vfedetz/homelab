@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
     volumes:
       - ${BASE_DIR}/paperless/db:/var/lib/postgresql
-  environment:
+    environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
