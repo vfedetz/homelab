@@ -53,23 +53,10 @@ services:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS:-4}
       - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS:-4}
-    cap_drop:
-      - ALL
-    cap_add:
-      - CHOWN
-      - SETGID
-      - SETUID
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
       - "nautical-backup.group=searxng"
       - "nautical-backup.group.searxng.priority=100"
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "1m"
-        max-file: "1"
-    env_file:
-      - /data/env/searxng/.env
 
   valkey:
     container_name: searxng-valkey
@@ -85,14 +72,3 @@ services:
     labels:
       - "nautical-backup.group=searxng"
       - "nautical-backup.group.searxng.priority=102"
-    cap_drop:
-      - ALL
-    cap_add:
-      - SETGID
-      - SETUID
-      - DAC_OVERRIDE
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "1m"
-        max-file: "1"
