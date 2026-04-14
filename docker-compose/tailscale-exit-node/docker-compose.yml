@@ -49,6 +49,7 @@ services:
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_HOSTNAME=npm-vpn-exit
       - TS_ROUTES=192.168.1.0/24
+      - TS_SOCKS5_SERVER=localhost:1055
     volumes:
       - ${BASE_DIR}/tailscale-vpn-exit-node:/var/lib/tailscale
     devices:
