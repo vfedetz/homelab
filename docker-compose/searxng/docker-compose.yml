@@ -47,7 +47,7 @@ services:
       gluetun:
         condition: service_healthy
     volumes:
-      - /home/vfedetz/docker/searxng/core-config:/etc/searxng/:Z
+      - /home/vfedetz/docker/searxng/core-config:/etc/searxng/
       - /home/vfedetz/docker/searxng/core-data:/var/cache/searxng/
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
