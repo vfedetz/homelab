@@ -39,7 +39,7 @@ services:
       - /data/env/searxng/.env
 
   searxng:
-    container_name: searxng
+    container_name: searxng-core
     image: docker.io/searxng/searxng:latest
     restart: unless-stopped
     network_mode: service:gluetun # run on the vpn network
@@ -47,8 +47,8 @@ services:
       gluetun:
         condition: service_healthy
     volumes:
-      - /home/vfedetz/docker/searxng/config:/etc/searxng:rw
-      - /home/vfedetz/docker/searxng/cache:/var/cache/searxng:rw
+      - /home/vfedetz/docker/searxng/core-config:/etc/searxng/:Z
+      - /home/vfedetz/docker/searxng/core-data:/var/cache/searxng/
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS:-4}
@@ -71,9 +71,9 @@ services:
     env_file:
       - /data/env/searxng/.env
 
-  redis:
-    container_name: searxng-redis
-    image: docker.io/valkey/valkey:8-alpine
+  valkey:
+    container_name: searxng-valkey
+    image: docker.io/valkey/valkey:9-alpine
     command: valkey-server --save 30 1 --loglevel warning
     restart: unless-stopped
     network_mode: service:gluetun # run on the vpn network
@@ -81,7 +81,7 @@ services:
       gluetun:
         condition: service_healthy
     volumes:
-      - /home/vfedetz/docker/searxng/valkey-data2:/data
+      - /home/vfedetz/docker/searxng/valkey-data:/data/
     labels:
       - "nautical-backup.group=searxng"
       - "nautical-backup.group.searxng.priority=102"
