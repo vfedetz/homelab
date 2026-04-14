@@ -2,7 +2,7 @@
 services:
   # For additional VPN service providers, see: https://github.com/qdm12/gluetun-wiki
   gluetun:
-    image: qmcgaw/gluetun
+    image: qmcgaw/gluetun:pr-3109 # https://github.com/qdm12/gluetun/issues/3108
     restart: unless-stopped
     container_name: tailscale-gluetun
     ports:
