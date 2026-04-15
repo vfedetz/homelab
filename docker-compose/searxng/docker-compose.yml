@@ -55,6 +55,7 @@ services:
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS:-4}
       - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS:-4}
       - SEARXNG_VALKEY_URL=${SEARXNG_VALKEY_URL}
+      - AUTOCOMPLETE=duckduckgo
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
       - "nautical-backup.group=searxng"
