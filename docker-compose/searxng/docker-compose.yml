@@ -16,6 +16,7 @@ services:
       - 8388:8388/udp # Shadowsocks
       - 8123:8000/tcp # HTTP control server
       - 8786:8080 # port for searxng
+      - 6379:6379 # port for valkey
     volumes:
       - /home/vfedetz/docker/searxng-gluetun:/gluetun
     environment:
