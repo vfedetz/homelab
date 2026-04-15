@@ -45,7 +45,7 @@ services:
     network_mode: service:gluetun # run on the vpn network
     depends_on:
       valkey:
-        condition: service_healthy
+        condition: service_started
       gluetun:
         condition: service_healthy
     volumes:
