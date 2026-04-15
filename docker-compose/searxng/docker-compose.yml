@@ -18,6 +18,8 @@ services:
       - 8786:8080 # port for searxng
     volumes:
       - /home/vfedetz/docker/searxng-gluetun:/gluetun
+    networks:
+      - searxng_net
     environment:
       - PUID=1000
       - PGID=1000
@@ -44,8 +46,6 @@ services:
     restart: unless-stopped
     network_mode: service:gluetun # run on the vpn network
     depends_on:
-      valkey:
-        condition: service_healthy
       gluetun:
         condition: service_healthy
     volumes:
@@ -67,13 +67,13 @@ services:
     image: docker.io/valkey/valkey:9-alpine
     command: valkey-server --save 30 1 --loglevel warning
     restart: unless-stopped
+    networks:
+      - searxng_net
     volumes:
       - /home/vfedetz/docker/searxng/valkey-data:/data/
-    healthcheck:
-      test: ["CMD", "valkey-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
     labels:
       - "nautical-backup.group=searxng"
       - "nautical-backup.group.searxng.priority=102"
+  
+networks:
+   searxng_net:
