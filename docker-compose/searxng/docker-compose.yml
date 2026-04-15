@@ -67,6 +67,6 @@ services:
 #    restart: unless-stopped
 #    volumes:
 #      - /home/vfedetz/docker/searxng/valkey-data:/data/
-    labels:
-      - "nautical-backup.group=searxng"
-      - "nautical-backup.group.searxng.priority=102"
+#    labels:
+#      - "nautical-backup.group=searxng"
+#      - "nautical-backup.group.searxng.priority=102"
