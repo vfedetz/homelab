@@ -45,7 +45,7 @@ services:
     network_mode: service:gluetun # run on the vpn network
     depends_on:
       valkey:
-        condition: service_started
+        condition: service_healthy
       gluetun:
         condition: service_healthy
     volumes:
@@ -69,6 +69,11 @@ services:
     restart: unless-stopped
     volumes:
       - /home/vfedetz/docker/searxng/valkey-data:/data/
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     labels:
       - "nautical-backup.group=searxng"
       - "nautical-backup.group.searxng.priority=102"
