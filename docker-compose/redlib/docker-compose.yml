@@ -44,6 +44,9 @@ services:
     restart: always
     container_name: redlib
     network_mode: service:gluetun # run on the vpn network
+    depends_on:
+      gluetun:
+        condition: service_healthy
     user: nobody
     read_only: true
     security_opt:
