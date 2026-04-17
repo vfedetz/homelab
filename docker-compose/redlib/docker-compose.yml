@@ -10,6 +10,7 @@ services:
       - "com.centurylinklabs.watchtower.enable=false" # Don't let watchtower auto-update
       - "nautical-backup.group=redlib"
       - "nautical-backup.group.redlib.priority=101"
+      - "nautical-backup.stop-before-backup=false" # without this I get 502 errors from redlib after backup runs
     ports:
       - 8889:8888/tcp # HTTP proxy
       - 8389:8388/tcp # Shadowsocks
