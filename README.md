@@ -138,6 +138,11 @@ homelab/
         <td><a href="https://github.com/nicholas-fedor/watchtower">Watchtower</a></td>
         <td>Automated Docker container image updates </td>
     </tr>
+    <tr>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/audiomuse-ai.svg"></td>
+        <td><a href="https://github.com/NeptuneHub/AudioMuse-AI/tree/main">AudioMuse-AI</a></td>
+        <td>Music playlist generator using sonic analysis</td>
+    </tr>
 
 </table>
   
