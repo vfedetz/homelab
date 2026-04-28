@@ -7,7 +7,7 @@ services:
     ports:
       - "${REDIS_PORT:-6379}:6379" # Expose Redis port to the host
     volumes:
-      - redis-data:/data # Persistent storage for Redis data
+      - ${BASE_DIR}/audiomuse-ai/redis-data:/data # Persistent storage for Redis data
     restart: unless-stopped
 
   # PostgreSQL database service
@@ -21,7 +21,7 @@ services:
     ports:
       - "${POSTGRES_PORT:-5432}:5432" # Expose PostgreSQL port to the host
     volumes:
-      - postgres-data:/var/lib/postgresql/data # Persistent storage for PostgreSQL data
+      - ${BASE_DIR}/audiomuse-ai/postgres-data:/var/lib/postgresql/data # Persistent storage for PostgreSQL data
     restart: unless-stopped
 
   # AudioMuse-AI Flask application service
@@ -42,7 +42,7 @@ services:
       REDIS_URL: "${REDIS_URL:-redis://redis:6379/0}" # Connects to the 'redis' service
       TEMP_DIR: "/app/temp_audio"
     volumes:
-      - temp-audio-flask:/app/temp_audio # Volume for temporary audio files
+      - ${BASE_DIR}/audiomuse-ai/temp-audio-flask:/app/temp_audio # Volume for temporary audio files
     depends_on:
       - redis
       - postgres
@@ -74,7 +74,7 @@ services:
       USE_GPU_CLUSTERING: "${USE_GPU_CLUSTERING:-true}"
       TEMP_DIR: "/app/temp_audio"
     volumes:
-      - temp-audio-worker:/app/temp_audio # Volume for temporary audio files
+      - ${BASE_DIR}/audiomuse-ai/temp-audio-worker:/app/temp_audio # Volume for temporary audio files
     depends_on:
       - redis
       - postgres
@@ -86,10 +86,3 @@ services:
             - driver: nvidia
               device_ids: ["0"]
               capabilities: [gpu]
-
-# Define volumes for persistent data and temporary files
-volumes:
-  redis-data:
-  postgres-data:
-  temp-audio-flask: # Volume for Flask app's temporary audio
-  temp-audio-worker: # Volume for Worker's temporary audio
