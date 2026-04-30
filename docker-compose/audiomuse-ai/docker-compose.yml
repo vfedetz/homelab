@@ -41,6 +41,9 @@ services:
       POSTGRES_PORT: "${POSTGRES_PORT:-5432}"
       REDIS_URL: "${REDIS_URL:-redis://redis:6379/0}" # Connects to the 'redis' service
       TEMP_DIR: "/app/temp_audio"
+      AI_MODEL_PROVIDER: ${AI_MODEL_PROVIDER}
+      OLLAMA_SERVER_URL: ${OLLAMA_SERVER_URL}
+      OLLAMA_MODEL_NAME: ${OLLAMA_MODEL_NAME}
     volumes:
       - ${BASE_DIR}/audiomuse-ai/temp-audio-flask:/app/temp_audio # Volume for temporary audio files
     depends_on:
