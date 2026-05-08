@@ -1,15 +1,15 @@
-# see: https://github.com/qdm12/gluetun/discussions/2201 "gluetun as tailscale exit node"
+version: "3.9"
+
 services:
-  # For additional VPN service providers, see: https://github.com/qdm12/gluetun-wiki
   gluetun:
-    image: qmcgaw/gluetun # https://github.com/qdm12/gluetun/issues/3108
-    restart: unless-stopped
+    image: qmcgaw/gluetun
     container_name: tailscale-gluetun
+    restart: unless-stopped
     ports:
       - 8888:8888/tcp # HTTP proxy
       - 8388:8388/tcp # Shadowsocks
-      - 8388:8388/udp # Shadowsocks
-      - 8125:8000/tcp # needed for homepage widget
+      - 8388:8388/udp
+      - 8125:8000/tcp
     volumes:
       - ${BASE_DIR}/tailscale-gluetun:/gluetun
     cap_add:
@@ -25,13 +25,12 @@ services:
       - OPENVPN_PASSWORD=${OPNVPN_PASSWORD}
       - SERVER_REGIONS=${SERVER_REGIONS}
       - TZ=America/New_York
-      - HTTPPROXY=off #change to on if you wish to enable
-      - SHADOWSOCKS=off #change to on if you wish to enable
-      - FIREWALL_OUTBOUND_SUBNETS=172.20.0.0/16,192.168.1.0/24 #change this in line with your subnet see note on guide.
-#      - FIREWALL_VPN_INPUT_PORTS=40312 #uncomment this line and change the port as per the note on the guide
+      - HTTPPROXY=off
+      - SHADOWSOCKS=off
+      - FIREWALL_OUTBOUND_SUBNETS=172.20.0.0/16,192.168.1.0/24
       - HTTP_CONTROL_SERVER_LOG=on
       - HTTP_CONTROL_SERVER_ADDRESS=:8000
-      - UPDATER_PERIOD=24h #update the servers information for the currently in-use VPN service provider.
+      - UPDATER_PERIOD=24h
       - DNS_ADDRESS=${DNS_ADDRESS}
       - MTU_DISCOVERY=off
     labels:
@@ -41,27 +40,25 @@ services:
   tailscale-vpn-exit-node:
     image: tailscale/tailscale:latest
     container_name: tailscale-vpn-exit-node
-    network_mode: service:gluetun
+    restart: unless-stopped
+    network_mode: host   # <-- Use host networking for reliability
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - ${BASE_DIR}/tailscale-vpn-exit-node:/var/lib/tailscale
     environment:
-      # Comment out the TS_AUTHKEY line after the container authenticates. Even if the node key is set to not expire,
-      # the auth key does expire and if you still have it in your compose file the container will fail to authenticate.
+      # Uncomment TS_AUTHKEY to authenticate the first time, then comment it again
       #- TS_AUTHKEY=${TS_AUTHKEY}
-      - TS_EXTRA_ARGS=--advertise-exit-node --accept-routes # or --advertise-tags=tag:vpn
+      - TS_EXTRA_ARGS=--advertise-exit-node --accept-routes
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_HOSTNAME=npm-vpn-exit
       - TS_ROUTES=192.168.1.0/24
       - TS_SOCKS5_SERVER=localhost:1055
-    volumes:
-      - ${BASE_DIR}/tailscale-vpn-exit-node:/var/lib/tailscale
-    devices:
-      - /dev/net/tun:/dev/net/tun
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
-    restart: unless-stopped
     depends_on:
-      gluetun:
-        condition: service_healthy
+      - gluetun
     labels:
       - "nautical-backup.group=tailscale-vpn-exit-node"
       - "nautical-backup.group.tailscale-vpn-exit-node.priority=100"
