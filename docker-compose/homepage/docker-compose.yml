@@ -12,4 +12,5 @@ services:
     volumes:
       - ${BASE_DIR}/homepage:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock:ro # optional, for docker integrations
+      - ${BASE_DIR}/homepage/images:/app/public/images # mount local images
     restart: unless-stopped
