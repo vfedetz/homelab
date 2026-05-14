@@ -34,11 +34,16 @@ services:
     runtime: nvidia
     environment:
       - OLLAMA_MODELS=/models
-      - OLLAMA_KEEP_ALIVE="-1" # do not unload model from GPU memory
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
-      - CUDA_VISIBLE_DEVICES=0
       #- LOG_LEVEL=debug
+      # tuning params
+      - OLLAMA_KEEP_ALIVE=-1 # do not unload model from GPU memory
+      - OLLAMA_NUM_PARALLEL=1
+      - OLLAMA_MAX_LOADED_MODELS=1
+      - CUDA_VISIBLE_DEVICES=0
+      - OLLAMA_FLASH_ATTENTION=1
+      - OLLAMA_GPU_LAYERS=-1
     deploy:
       resources:
         reservations:
