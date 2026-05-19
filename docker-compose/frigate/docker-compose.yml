@@ -4,23 +4,11 @@ services:
     privileged: true # this may not be necessary for all setups
     restart: always
     stop_grace_period: 30s # allow enough time to shut down the various services
-    
+
+    # normal default image
     #image: ghcr.io/blakeblackshear/frigate:stable
-    image: frigate-custom:latest
-    build:
-      context: .
-      dockerfile_inline: |
-        FROM ghcr.io/blakeblackshear/frigate:stable
-        RUN apt update && apt install -y \
-          libgstrtspserver-1.0-0 \
-          libgstreamer1.0-0 \
-          libgstreamer-plugins-bad1.0-0 \
-          gstreamer1.0-x \
-          gstreamer1.0-plugins-base \
-          gstreamer1.0-plugins-good \
-          gstreamer1.0-plugins-bad \
-          libssl3
-          
+    # This repository maintains a combined Neolink+frigate Docker container that tracks the official frigate container at docker://ghcr.io/blakeblackshear/frigate:stable
+    image: befh/frigate:latest          
     cap_add:
       - CAP_PERFMON
     # mem limits set to try and combat "Unable to keep up with recording segments in cache" errors
