@@ -19,7 +19,7 @@ services:
           gstreamer1.0-plugins-base \
           gstreamer1.0-plugins-good \
           gstreamer1.0-plugins-bad \
-          libssl
+          libssl3
           
     cap_add:
       - CAP_PERFMON
