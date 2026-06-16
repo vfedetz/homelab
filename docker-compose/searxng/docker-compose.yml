@@ -47,8 +47,6 @@ services:
     depends_on:
       gluetun:
         condition: service_healthy
-      valkey:
-        condition: service_healthy
     volumes:
       - ${BASE_DOCKER_DIR}/searxng/core-config:/etc/searxng/
       - ${BASE_DOCKER_DIR}/searxng/core-data:/var/cache/searxng/
