@@ -18,7 +18,7 @@ services:
       - 8123:8000/tcp # HTTP control server
       - 8786:8080 # port for searxng
     volumes:
-      - /home/vfedetz/docker/searxng-gluetun:/gluetun
+      - ${BASE_DOCKER_DIR}/searxng-gluetun:/gluetun
     environment:
       - PUID=1000
       - PGID=1000
@@ -48,8 +48,8 @@ services:
       gluetun:
         condition: service_healthy
     volumes:
-      - /home/vfedetz/docker/searxng/core-config:/etc/searxng/
-      - /home/vfedetz/docker/searxng/core-data:/var/cache/searxng/
+      - ${BASE_DOCKER_DIR}/searxng/core-config:/etc/searxng/
+      - ${BASE_DOCKER_DIR}/searxng/core-data:/var/cache/searxng/
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
       - SEARXNG_SECRET=${SEARXNG_SECRET}
@@ -70,7 +70,7 @@ services:
       gluetun:
         condition: service_healthy
     volumes:
-      - /home/vfedetz/docker/searxng/valkey-data:/data/
+      - ${BASE_DOCKER_DIR}/searxng/valkey-data:/data/
     labels:
       - "nautical-backup.group=searxng"
       - "nautical-backup.group.searxng.priority=102"
